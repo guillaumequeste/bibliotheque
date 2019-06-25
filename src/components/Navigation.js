@@ -10,6 +10,7 @@ import Edit from './admin/Edit'
 import Show from './admin/Show'
 import ProtectedRoute from './ProtectedRoute'
 import Logout from './Logout'
+import Details from './Details'
 import './Navigation.css'
 
 class Navigation extends Component {
@@ -39,6 +40,7 @@ class Navigation extends Component {
                 <ProtectedRoute authenticated={this.props.authenticated} path='/edit/:id' component={Edit} />
                 <ProtectedRoute authenticated={this.props.authenticated} path='/create' component={Create} />
                 <ProtectedRoute authenticated={this.props.authenticated} path='/show/:id' component={Show} />
+                <Route  path='/details/:id' component={Details} />
             </Switch>
         </div>
     </Router>
