@@ -1,0 +1,14 @@
+.bodyNavigation {
+    height: 5vh;
+    background-color: beige;
+    line-height: 5vh;
+}
+
+.link {
+    padding-left: 5%;
+    text-decoration: none;
+}
+
+.linkDashboard {
+    padding-right: 5%;
+}
