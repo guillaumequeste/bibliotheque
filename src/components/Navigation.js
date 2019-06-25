@@ -5,6 +5,9 @@ import Contact from './Contact'
 import Login from './Login'
 import Register from './Register'
 import Dashboard from './admin/Dashboard'
+import Create from './admin/Create'
+import Edit from './admin/Edit'
+import Show from './admin/Show'
 import ProtectedRoute from './ProtectedRoute'
 import Logout from './Logout'
 import './Navigation.css'
@@ -33,6 +36,9 @@ class Navigation extends Component {
                 <Route authenticated={this.props.authenticated} path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <ProtectedRoute authenticated={this.props.authenticated} path="/dashboard" component={Dashboard} />
+                <ProtectedRoute authenticated={this.props.authenticated} path='/edit/:id' component={Edit} />
+                <ProtectedRoute authenticated={this.props.authenticated} path='/create' component={Create} />
+                <ProtectedRoute authenticated={this.props.authenticated} path='/show/:id' component={Show} />
             </Switch>
         </div>
     </Router>
