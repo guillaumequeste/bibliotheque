@@ -29,20 +29,22 @@ class Details extends Component {
 
   render() {
     return (
-      <div class="container">
-        <div class="panel panel-default">
-          <div class="panel-heading">
+      <div className="container">
+        <div className="panel panel-default">
+          <div className="panel-heading">
           <h4><Link to="/">Home</Link></h4>
-            <h3 class="panel-title">
+            <h3 className="panel-title">
               {this.state.board.title}
             </h3>
           </div>
-          <div class="panel-body">
+          <div className="panel-body">
             <dl>
               <dt>Description:</dt>
               <dd>{this.state.board.description}</dd>
               <dt>Author:</dt>
               <dd>{this.state.board.author}</dd>
+              <dt>Image:</dt>
+              <img src={`${this.state.board.image}`} />
             </dl>
           </div>
         </div>

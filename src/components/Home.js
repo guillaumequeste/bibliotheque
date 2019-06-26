@@ -15,13 +15,14 @@ class Home extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const boards = [];
     querySnapshot.forEach((doc) => {
-      const { title, description, author } = doc.data();
+      const { title, description, author, image } = doc.data();
       boards.push({
         key: doc.id,
         doc, // DocumentSnapshot
         title,
         description,
         author,
+        image
       });
     });
     this.setState({
@@ -43,6 +44,7 @@ class Home extends Component {
                     <td><Link to={`/details/${board.key}`}>{board.title}</Link></td>
                     <td>{board.description}</td>
                     <td>{board.author}</td>
+                    <img src={`${board.image}`} />
                   </tr>
                 )}
           </div>

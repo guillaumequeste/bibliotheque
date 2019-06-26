@@ -10,7 +10,8 @@ class Edit extends Component {
       key: '',
       title: '',
       description: '',
-      author: ''
+      author: '',
+      image: ''
     };
   }
 
@@ -23,7 +24,8 @@ class Edit extends Component {
           key: doc.id,
           title: board.title,
           description: board.description,
-          author: board.author
+          author: board.author,
+          image: board.image
         });
       } else {
         console.log("No such document!");
@@ -40,19 +42,21 @@ class Edit extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { title, description, author } = this.state;
+    const { title, description, author, image } = this.state;
 
     const updateRef = firebase.firestore().collection('boards').doc(this.state.key);
     updateRef.set({
       title,
       description,
-      author
+      author,
+      image
     }).then((docRef) => {
       this.setState({
         key: '',
         title: '',
         description: '',
-        author: ''
+        author: '',
+        image: ''
       });
       this.props.history.push("/show/"+this.props.match.params.id)
     })
@@ -84,6 +88,10 @@ class Edit extends Component {
               <div class="form-group">
                 <label for="author">Author:</label>
                 <input type="text" class="form-control" name="author" value={this.state.author} onChange={this.onChange} placeholder="Author" />
+              </div>
+              <div class="form-group">
+                <label for="image">Image:</label>
+                <input type="text" class="form-control" name="image" value={this.state.image} onChange={this.onChange} placeholder="Image" />
               </div>
               <button type="submit" class="btn btn-success">Submit</button>
             </form>
