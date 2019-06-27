@@ -5,7 +5,7 @@ import firebase from '../firebase'
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.ref = firebase.firestore().collection('boards');
+    this.ref = firebase.firestore().collection('boards').orderBy("title", "asc");
     this.unsubscribe = null;
     this.state = {
       boards: []
