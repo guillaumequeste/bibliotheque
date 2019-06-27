@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import firebase from '../firebase'
+import './Liste.css'
 
 class Liste extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class Liste extends Component {
 
   render () {
       return (
-          <div>
+          <div className="bodyListe">
               <h1>Liste</h1>
               <h3>Liste de livres</h3>
               {this.state.boards.map(board =>
