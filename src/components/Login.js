@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import firebase from '../firebase'
+import './Login.css'
 
 class Login extends Component {
  state = {
@@ -30,7 +31,8 @@ firebase
  render() {
    const { email, password, error } = this.state;
    return (
-     <div>
+     <div className="bodyLogin">
+      <div className="form">
         <h1>Log In</h1>
         {error ? (
             <h3>{error.message}</h3>
@@ -44,9 +46,10 @@ firebase
                value={password}
                onChange={this.handleInputChange}
              />
-             <button type="submit">Log In</button>
+             <button type="submit" className="btn btn-primary">Log In</button>
         </form>
      </div>
+    </div>
    );
  }
 }

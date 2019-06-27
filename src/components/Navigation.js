@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import Home from './Home'
+import Liste from './Liste'
 import Contact from './Contact'
 import Login from './Login'
 import Register from './Register'
@@ -18,8 +18,8 @@ class Navigation extends Component {
    return (
     <Router>
         <div className="bodyNavigation">
-            <Link to="/" className="link">Home</Link>
-            <Link to="/contact" className="link">Contact</Link>
+            <Link to="/" className="link">Liste</Link>
+            <Link to="/contact" className="link linkDashboard">Contact</Link>
              {this.props.authenticated ? (
                <span>
                  <Link to="/dashboard" className="link linkDashboard">Dashboard</Link>
@@ -27,12 +27,12 @@ class Navigation extends Component {
                </span>
              ) : (
                <span>
-                 <Link to="/login" className="link">Login</Link>
-                 <Link to="/register" className="link">Register</Link>
+                 <Link to="/login" className="link btn btn-primary">Login</Link>
+                 {/* <Link to="/register" className="link">Register</Link> */}
                </span>
              )}
             <Switch>
-                <Route exact path="/" component={Home} />
+                <Route exact path="/" component={Liste} />
                 <Route exact path="/contact" component={Contact} />
                 <Route authenticated={this.props.authenticated} path="/login" component={Login} />
                 <Route path="/register" component={Register} />

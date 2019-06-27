@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import firebase from '../firebase'
 
-class Home extends Component {
+class Liste extends Component {
   constructor(props) {
     super(props);
     this.ref = firebase.firestore().collection('boards').orderBy("title", "asc");
@@ -37,7 +37,7 @@ class Home extends Component {
   render () {
       return (
           <div>
-              <h1>Home</h1>
+              <h1>Liste</h1>
               <h3>Liste de livres</h3>
               {this.state.boards.map(board =>
                   <tr>
@@ -52,4 +52,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default Liste

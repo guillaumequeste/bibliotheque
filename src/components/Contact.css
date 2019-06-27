@@ -1,0 +1,8 @@
+.bodyContact {
+    display: flex;
+    min-height: 50vh;
+}
+
+.contact {
+    margin: auto;
+}

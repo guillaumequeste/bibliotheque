@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import firebase from '../firebase'
+import './Register.css'
 
 class Register extends Component {
  state = {
@@ -30,7 +31,8 @@ handleSubmit = (event) => {
  render() {
    const { email, password, error } = this.state;
    return (
-     <div>
+    <div className="bodyRegister">
+      <div className="form">
         <h1>Register</h1>
         {error ? (
             <h3>{error.message}</h3>
@@ -44,9 +46,10 @@ handleSubmit = (event) => {
                value={password}
                onChange={this.handleInputChange}
              />
-            <button type="submit">Register</button>
+            <button type="submit" className="btn btn-primary">Register</button>
         </form>
-     </div>
+      </div>
+    </div>
    );
  }
 }
