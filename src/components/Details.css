@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+.bodyDetails {
+    min-height: 94vh;
+    background-color: beige;
+}
+
+.titreDetails {
+    text-align: center;
+    font-family: 'Dancing Script', cursive, sans-serif;
+}
+
+.divImgDetails {
+    text-align: center;
+}
+
+.imgDetails {
+    height: 350px;
+}
+
+.description {
+    margin: 0 5% 0 5%;
+}

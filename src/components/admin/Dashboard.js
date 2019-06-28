@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import firebase from '../../firebase'
+import './Dashboard.css'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class Dashboard extends Component {
 
   render() {
     return (
+      <div className="bodyDashboard">
       <div className="container">
         <div className="panel panel-default">
           <div className="panel-heading">
@@ -64,6 +66,7 @@ class Dashboard extends Component {
             </table>
           </div>
         </div>
+      </div>
       </div>
     );
   }

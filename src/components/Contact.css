@@ -1,6 +1,7 @@
 .bodyContact {
     display: flex;
-    min-height: 50vh;
+    min-height: 94vh;
+    background-color: beige;
 }
 
 .contact {

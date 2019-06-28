@@ -6,7 +6,7 @@ import './Liste.css'
 class Liste extends Component {
   constructor(props) {
     super(props);
-    this.ref = firebase.firestore().collection('boards').orderBy("title", "asc");
+    this.ref = firebase.firestore().collection('boards').orderBy("author", "asc");
     this.unsubscribe = null;
     this.state = {
       boards: []
@@ -36,20 +36,23 @@ class Liste extends Component {
   }
 
   render () {
-      return (
-          <div className="bodyListe">
-              <h1>Liste</h1>
-              <h3>Liste de livres</h3>
-              {this.state.boards.map(board =>
-                  <tr>
-                    <td><Link to={`/details/${board.key}`}>{board.title}</Link></td>
-                    <td>{board.description}</td>
-                    <td>{board.author}</td>
-                    <img src={`${board.image}`} />
-                  </tr>
-                )}
-          </div>
-      )
+    return (
+      <div className="bodyListe">
+        <h1 className="titreListe">Liste de livres</h1>
+        <div className="cardsListe">
+          {this.state.boards.map(board =>
+            <div className="card">
+              <img className="card-img-top" src={`${board.image}`} alt={board.title} />
+              <div className="card-body">
+                <h5 className="card-title">{board.author}</h5>
+                <p className="card-text">{board.title}</p>
+                <Link to={`/details/${board.key}`} className="btn btn-primary">Fiche</Link>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    )
   }
 }
 

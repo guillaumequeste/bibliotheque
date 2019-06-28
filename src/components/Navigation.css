@@ -1,12 +1,13 @@
 .bodyNavigation {
     height: 6vh;
-    background-color: beige;
+    background-color: rgb(219, 188, 13);
     line-height: 6vh;
 }
 
 .link {
-    padding-left: 5%;
+    margin-left: 5%;
     text-decoration: none;
+    color: white;
 }
 
 .linkDashboard {
