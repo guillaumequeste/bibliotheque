@@ -42,4 +42,11 @@ class App extends Component {
     
     si problème, s'adapter et voir les options proposées 
     créer fichier firebase.json à la racine
-    refaire tout du début firebase init, npm run build... et firebase deploy */
+    refaire tout du début firebase init, npm run build... et firebase deploy
+    
+    une fois que le projet a été déployé :
+    firebase use --add
+    select project et donner nom
+    firebase use bibliotheque
+    npm run build
+    firebase deploy */
