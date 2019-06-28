@@ -22,7 +22,7 @@ class Navigation extends Component {
             <Link to="/contact" className="link linkDashboard">Contact</Link>
              {this.props.authenticated ? (
                <span>
-                 <Link to="/dashboard" className="link linkDashboard">Dashboard</Link>
+                 <Link to="/dashboard" className="link linkDashboard">Dboard</Link>
                  <Logout />
                </span>
              ) : (
